@@ -1,1 +1,3 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/zaAkQ-UZ)
+# CS343-SemesterProject
+CS-343 Front end web app project will be a personal finance app that will track saving, spending, and donations
+as well as providing graphs for a visual representation for businesses and the public.

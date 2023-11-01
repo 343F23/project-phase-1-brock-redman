@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-head"><b>Finance Tracking</b>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="spending.html">Spending</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li><a href="donations.html">Donations</a></li>
+              <li><a href="visual.html">Visuals</a></li>
+            </ul>
+          </nav>
+        </header>
+        <h1>Donations</h1>
+        <form>
+          <p><b>Add an entry to the table</b></p>
+          <label for="name">Opportunity Name:</label>
+          <input type="text" id="name" name="name" required size="10">
+
+          <label for="Opp-type">Opportunity Type:</label>
+          <input type="text" id="Opp-type" name="Opp-type" required size="10">
+
+          <label for="amount">Amount:</label>
+          <input type="text" id="amount" name="amount" required size="10">
+     
+          <label for="type">Type:</label>
+          <input type="text" id="type" name="type" required size="10">
+          <input type="submit" value="Submit">
+        </form>
+        <table>
+          <thead>
+            <tr>
+                <th>Opportunity Name</th>
+                <th>Opportunity Type</th>
+                <th>Amount</th>
+                <th>Type</th>
+              </tr>
+          </thead>
+          <tr>
+            <td>Lung Cancer Awareness</td>
+            <td>Medical Research</td>
+            <td>$20,000</td>
+            <td>Annual</td>
+        
+          </table>
+      </div>
+      <footer class="main-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-head"><b>Finance Tracking</b>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="spending.html">Spending</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li><a href="donations.html">Donations</a></li>
+              <li><a href="visual.html">Visuals</a></li>
+            </ul>
+          </nav>
+        </header>
+        <h1>Savings</h1>
+        <form>
+          <p><b>Add an entry to the table</b></p>
+          <label for="bank">Bank:</label>
+          <input type="text" id="bank" name="bank"> 
+
+          <label for="membership">Membership-length:</label>
+          <input type="text" id="membership" name="membership">
+
+          <label for="balance">Balance:</label>
+          <input type="text" id="balance" name="balance">
+     
+          <label for="contract">Balance:</label>
+          <input type="text" id="contract" name="contract">
+          <input type="submit" value="Save">
+        </form>
+        <table>
+          <thead>
+              <tr>
+                <th>Bank</th>
+                <th>Membership-length</th>
+                <th>Balance</th>
+                <th>Contract length</th>
+              </tr>
+          </thead>
+          <tr>
+            <td>Bank of America</td>
+            <td>6 months</td>
+            <td>$12,000</td>
+            <td>18 months</td>
+        
+          </table>
+    </div>
+    <footer class="main-footer"></footer>
+</body>
+</html>

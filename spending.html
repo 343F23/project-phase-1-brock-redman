@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Tracker</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="main-head"><b>Finance Tracking</b>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="spending.html">Spending</a></li>
+              <li><a href="savings.html">Savings</a></li>
+              <li><a href="donations.html">Donations</a></li>
+              <li><a href="visual.html">Visuals</a></li>
+            </ul>
+          </nav>
+        </header>
+        <h1>Spending</h1>
+        
+        <form>
+          <p><b>Add an entry to the table</b></p>
+          <label for="transaction">Transaction:</label>
+          <input type="text" id="transaction" name="transaction" required size="10" />
+
+          <label for="amount">Amount:</label>
+          <input type="text" id="amount" name="amount" required size="10" />
+
+          <label for="date">Date:</label>
+          <input type="text" id="date" name="date" required size="10" />
+          <input type="submit" value="Submit">    
+        </form>
+        <table>
+          <thead>
+              <tr>
+                <th>Transaction</th>
+                <th>Amount</th>
+                <th>Date</th>
+              </tr>
+          </thead>
+          <tr>
+            <td>McDonalds</td>
+            <td>6 months</td>
+            <td>10/12</td>        
+          </table>
+      </div>
+    <footer class="main-footer"></footer>
+
+</body>
+</html>
