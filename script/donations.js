@@ -1,18 +1,20 @@
 let docBody = document.querySelector("body");
 
-let spendingInput = document.getElementById("spendingForm");
-
-let spendingTableData = new Array();
+let donationInput = document.getElementById("donationForm");
 
 let addButton = document.getElementById("add");
 let clearButton = document.getElementById("clear");
+
+
+// Array to store table data
+let donationTableData = new Array();
 
 /**
  * Remove this tables data from local storage
  */
 clearButton.addEventListener("click", (e) => { 
     e.preventDefault();
-    localStorage.removeItem("spendingTableData");
+    localStorage.removeItem("donationTableData");
 });
 
 /**
@@ -23,6 +25,7 @@ addButton.addEventListener("click", (e) => {
     addEntryToLocalStage();
     showSavingsTableData();
 });
+      
 showSavingsTableData();
 
 /**
@@ -30,32 +33,31 @@ showSavingsTableData();
  */
 function showSavingsTableData() {
     getDataFromLocalStorage();
-    let spendingTable = document.getElementById("spendingTable");
+    let donationTable = document.getElementById("donationTable");
          
-    let numRows = spendingTable.rows.length;
+    let numRows = donationTable.rows.length;
     console.log(numRows);
     while (--numRows && numRows > 0) {
-        
-        spendingTable.deleteRow(numRows);
+        donationTable.deleteRow(numRows);
     }
     
     count = 1;
     let numElements = 0;
-    for (let i = 0; i < spendingTable.rows.length; i++) {
+    for (let i = 0; i < donationTable.rows.length; i++) {
          let newEntry = document.createElement("tr");
          newEntry.id = count;
          let id = document.createElement("td");
-         let spendingBalanceInput = document.createElement("td");
-         spendingBalanceInput.contentEditable = true;
+         let nameInput = document.createElement("td");
+         nameInput.contentEditable = true;
 
-         let transactionInput = document.createElement("td");
-         transactionInput.contentEditable = true;
+         let opptypeInput = document.createElement("td");
+         opptypeInput.contentEditable = true;
 
          let amountInput = document.createElement("td");
          amountInput.contentEditable = true;
 
-         let dateInput = document.createElement("td");
-         dateInput.contentEditable = true;
+         let typeInput = document.createElement("td");
+         typeInput.contentEditable = true;
 
          let option = document.createElement("td");
 
@@ -72,13 +74,12 @@ function showSavingsTableData() {
 
         updateBtn.addEventListener("click", (event) => {
             event.preventDefault();
-            console.log("here");
-             spendingTableData[i].spendingBalance = spendingBalanceInput.innerText
-             spendingTableData[i].transaction = transactionInput.innerText;
-             spendingTableData[i].amount = amountInput.innerText;
-             spendingTableData[i].date = dateInput.innerText;
+            donationTableData[i].name = nameInput.innerText
+            donationTableData[i].opptype = opptypeInput.innerText;
+            donationTableData[i].amount = amountInput.innerText;
+            donationTableData[i].type = typeInput.innerText;
 
-             localStorage.setItem('spendingTableData', JSON.stringify(spendingTableData));
+             localStorage.setItem('donationTableData', JSON.stringify(donationTableData));
              createBlob();
         });
 
@@ -87,8 +88,8 @@ function showSavingsTableData() {
              numElements--;
              index = newEntry.id;
               
-             spendingTableData.splice(numElements, 1); 
-             localStorage.setItem('spendingTableData', JSON.stringify(spendingTableData));
+             donationTableData.splice(numElements, 1); 
+             localStorage.setItem('donationTableData', JSON.stringify(donationTableData));
              createBlob();
              deleteRow(index);                
         });
@@ -98,18 +99,18 @@ function showSavingsTableData() {
               
          // Create table cells
         id.innerText = count; 
-        spendingBalanceInput.innerText = spendingTableData[i].spendingBalance;
-        transactionInput.innerText = spendingTableData[i].transaction;
-        amountInput.innerText = spendingTableData[i].amount;
-        dateInput.innerText = spendingTableData[i].date;
+        nameInput.innerText = donationTableData[i].name;
+        opptypeInput.innerText = donationTableData[i].opptype;
+        amountInput.innerText = donationTableData[i].amount;
+        typeInput.innerText = donationTableData[i].type;
 
          newEntry.appendChild(id);
-         newEntry.appendChild(spendingBalanceInput)
-         newEntry.appendChild(transactionInput);
+         newEntry.appendChild(nameInput)
+         newEntry.appendChild(opptypeInput);
          newEntry.appendChild(amountInput);
-         newEntry.appendChild(dateInput);
+         newEntry.appendChild(typeInput);
          newEntry.appendChild(option);
-         spendingTable.appendChild(newEntry);
+         donationTable.appendChild(newEntry);
          count++;
          numElements++;
     }          
@@ -120,23 +121,22 @@ function showSavingsTableData() {
  */
 function addEntryToLocalStage() {
     getDataFromLocalStorage();
-    spendingTableData.push({
-        spendingBalance: document.getElementById("spendingBalance").value,
-        transaction:     document.getElementById("transaction").value,
-        amount:          document.getElementById("amount").value,
-        date:            document.getElementById("date").value
+    donationTableData.push({
+        name:        document.getElementById("name").value,
+        opptype:     document.getElementById("opptype").value,
+        amount:      document.getElementById("amount").value,
+        type:        document.getElementById("type").value
     });
 
-    localStorage.setItem("spendingTableData", JSON.stringify(spendingTableData));
+    localStorage.setItem("donationTableData", JSON.stringify(donationTableData));
     createBlob();
 }
 
-function createBlob() {
-    const spendingBlob = new Blob([JSON.stringify(spendingTableData)], {
-        type: "application/json",
-    });
 
-    console.log("spendingBlob: ", spendingBlob);
+function createBlob() {
+    const donationBlob = new Blob([JSON.stringify(donationTableData)], {
+        type: "application/json",
+      });
 }
 
 /**
@@ -146,14 +146,14 @@ function createBlob() {
 function deleteRow(rowid) {   
     let row = document.getElementById(rowid);
     row.parentNode.removeChild(row);
-} 
+}
 
 /**
  * Grab a fresh copy of the table data from local storage
  */
 function getDataFromLocalStorage() {
-    let tableData = localStorage.getItem("spendingTableData");
+    let tableData = localStorage.getItem("donationTableData");
     if (tableData != null) {
-        spendingTableData = JSON.parse(tableData)
+        donationTableData = JSON.parse(tableData)
     }
 }
