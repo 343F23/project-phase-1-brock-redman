@@ -5,48 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finance Tracker</title>
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="main-head"><b>Finance Tracking</b>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="spending.html">Spending</a></li>
-              <li><a href="savings.html">Savings</a></li>
-              <li><a href="donations.html">Donations</a></li>
-              <li><a href="visual.html">Visuals</a></li>
-              <li><a href="report.html">Report</a></li>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Finance Tracking</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="visuals.html">Visuals</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Finances
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="spending.html">Spending</a></li>
+                    <li><a class="dropdown-item" href="savings.html">Savings</a></li>
+                    <li><a class="dropdown-item" href="donations.html">Donations</a></li>
+                </ul>
+              </li>
             </ul>
-          </nav>
-        </header>
-
-        <article class="content">
-          <h1>Welcome to Finance Tracking!</h1>
-          <p class="home-text">
-            This web application allows you and businesses to keep track of all their spending, money currently at <br>
-            your disposable in savings and track potential charity opportunities through the viewing of text and<br>
-            graphs. Keep reading for a brief description of what you can expect to be able to do with this application.<br>
-          <br>
-             To get started, you'll notice several tabs, home which will take you back here, and a <br>
-             Finance tabs containing spending, saving and charity options. It's here that you will be able to track <br>
-             these types of opportunities, as well as create, update, view, and delete opportunities. The visual <br>
-             tab will allow you to add visual represtations of the current data you choose. 
-            
-            Site inspirations from <a href="https://www.nwfcu.org/">Northwest Federal Credit Union</a>
+          </div>
+        </div>
+      </nav>
       
-            </p>
-        </article>
+      <article class="content">
+        <h1>Welcome to Finance Tracking!</h1>
+        <p class="home-text">
+          This web application allows you and businesses to keep track of all their spending, money currently at <br>
+          your disposable in savings and track potential charity opportunities, as well as create visuals to track<br>
+          investment opportunities. Keep reading for a brief description of what you can expect to be able to do <br>
+          with this application.<br>
+        <br>
+           To get started, you'll notice several tabs, a Finance dropdown containing spending, saving and <br>
+           charity options. It's here that you will be able to track these types of opportunities, as well<br>
+           as create, update, view, and delete opportunities. The visual tab will allow you to track investment<br>
+           opportunities by creating graphs that show a list of the daily highs of your chosen stock. <br>
+          
+           Site inspirations from <a href="https://www.nwfcu.org/">Northwest Federal Credit Union</a>
+          </p>
+      </article>
 
-        <div class="image-group">
-          <img src="images/finance3.jpg" class="card-img-top" alt="...">
-          <img src="images/finance1.jpg" alt="">
-          <img src="images/finance2.jpg" alt="">
-        </div >
+      <div class="image-group">
+        <img src="images/finance3.jpg" alt="">
+        <img src="images/finance1.jpg" alt="">
+        <img src="images/finance2.jpg" alt="">
+      </div >
 
-        <footer class="main-footer"></footer>
-      </div>
+      <footer></footer>
 
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
-</html>
