@@ -1,34 +1,62 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 20px;
+.container-fluid {
+    background-color: lightgreen;
+    height: 50px;
     border: solid 3px;
-    font: sans-serif;
+    width: 100%
 }
 
-li {
-    display: inline-block;
-    padding-right: 40px;
-}
-p, form {
-    text-align: center;
-    font: serif;
-}
-a {
-    color: black;
-}
-
-h1 {
-    color: green;
-    text-align: center;
-    font: sans-serif;
-}
-
-.home-text {
-    text-align: center;
-    border: solid 3px;
+table, th {
+    border: solid 1pt;
+    border-collapse: collapse;
     padding: 5px;
+    text-align: center;
+    margin: 5px;
+}
+
+thead {
+    background-color: #CACACA;
+}
+
+input {
+    margin: 5px;
+}
+
+#add {
+    background-color: green;
+    color: white;
+}
+
+#clear {
+    background-color: black;
+    color: white;
+}
+
+td, tr {
+    border: solid 1pt;
+    padding: 3px;
+}
+
+.col {
+    width: 300px;
+}
+
+
+img {
+    width: 350px;
+    height: 250px;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    
+}
+
+p {
+    text-align: center;
 }
 
 .image-group {
@@ -36,86 +64,26 @@ h1 {
     padding: 5px;
     align-items: center;
     justify-content: center;
+    
 }
 
-.visual-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-img {
-    height: 300px;
-    width: 450px;
+h1 {
     text-align: center;
 }
 
-.main-head {
-    grid-area: header;
+footer {
     background-color: lightgreen;
-    font: sans-serif;
-}
-
-.content {
-    grid-area: content;
-}
-
-.main-nav {
-    grid-area: header;
-}
-
-@media (max-width: 750px) {
-    img {
-        height: 50px;
-        width: 50px;
-        text-align: center;
-    }
-}
-@media (min-width: 750px) {
-    img {
-        grid-area: images;
-        text-align: center;
-    }
+    height: 50px;
+    border: solid 3px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    margin: auto;
 }
 
 form {
     padding: 5px;
     margin-left: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
-
-.main-footer {
-    background-color: lightgreen;
-    height: 40px;
-    border: solid 3px;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-
-}
-
-table, th {
-    border: solid 1pt;
-    border-collapse: collapse;
-    padding: 5px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-td {
-    border: solid 1pt;
-    padding: 3px;
-}
-
-
-.wrapper {
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-areas:
-      "header  header  header"
-      "Content content content"
-      "images  images  images"
-      "footer  footer  footer";
-  }
-  nav ul {
-    flex-direction: row;
-  }
